@@ -10,40 +10,188 @@ void llenarM(int M[][8])
      for(int i=0;i<=7;i++)
          for(int j=0;j<=7;j++)
              M[i][j]=0;
-     M[7][0]=cont;
-     int filas=7;
-     int columnas=0;
-     
-     while(cont!=5)
+     int i=7;
+     int j=0;
+     M[i][j]=1;
+     int sum=1;
+     srand(time(NULL));
+     while(sum!=60)
      {
-          cont++;
-          int numero=1;
-           
-          switch(numero)
-          {
+         long num=(rand()%8)+1;
+         switch(num)
+         {
               case 1:
-                   filas=filas-1;
-                   columnas=columnas+2;
-                   if(filas<0 || filas>7 || columnas <0 || columnas>7)
+                   i=i-1;
+                   j=j+2;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
                    {
-                              filas=filas+1;
-                              columnas=columnas-2;
+                       i=i+1;
+                       j=j-2;
                    }
                    else
                    {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
                    }
-                   M[filas][columnas]=cont;
                    break;
-              
-          }
-                                    
+              case 2:
+                   i=i-1;
+                   j=j-2;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                        i=i+1;
+                        j=j+2;
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 3:
+                   i=i-2;
+                   j=j+1;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                       i=i+2;
+                       j=j-1;
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 4:
+                   i=i-2;
+                   j=j+1;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                       i=i+2;
+                       j=j-1;                         
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 5:
+                   i=i+1;
+                   j=j-2;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                        i=i-1;
+                        j=j+2;                      
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 6:
+                   i=i+1;
+                   j=j+2;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                        i=i-1;
+                        j=j-2;
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 7:
+                   i=i+2;
+                   j=j-1;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                       i=i-2;
+                       j=j+1;   
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+              case 8:
+                   i=i+2;
+                   j=j+1;
+                   if(i<0||i>7||j<0||j>7||(i==2 && j==2)||(i==2 && j==5)||(i==5 && j==2)||(i==5 && j==5))
+                   {
+                       i=i-2;
+                       j=j-1;
+                   }
+                   else
+                   {
+                       if(M[i][j]==0)
+                       {
+                            M[i][j]=1;
+                            sum++;
+                       }
+                       else
+                       {
+                       }
+                   }
+                   break;
+         }
      }
-      for(int i=0;i<=7;i++)
-          {
+          
+                                    
+     
+     for(int i=0;i<=7;i++)
+     {
              for(int j=0;j<=7;j++)
                  cout<<M[i][j]<<" ";   
              cout<<endl; 
-          }          
+     }
+     cout<<sum;    
 
 }
 
